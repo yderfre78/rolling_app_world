@@ -1,10 +1,11 @@
-
-import './App.css';
-import Routes from './routes';
-
+import "./App.css";
+import Routes from "./routes";
+import  FlightProvider  from "./context/flights/Provider";
 function App() {
   return (
-<Routes/>
+    <FlightProvider>
+      <Routes />
+    </FlightProvider>
   );
 }
 
