@@ -1,16 +1,12 @@
+import { Routes, Route } from "react-router-dom";
 
-
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-
-import Home from './components/Home';
-
-export default function Routes() {
+import Home from "../views/Home";
+import FourOFour from "../views/404";
+export default function RoutesApp() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Home}/>
-      </Switch>
-    </Router>
+    <Routes>
+      <Route path="/" element={<Home />} exact />
+      <Route path="*" element={<FourOFour />} />
+    </Routes>
   );
 }
-
