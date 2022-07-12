@@ -1,14 +1,17 @@
 import { useContext, useEffect } from "react";
 import FlightContext from "../../context/flights";
+import FlightList from "./components/FlightList";
 
 export default function Home() {
-  const { getFlights } = useContext(FlightContext);
+  const { getFlights, flights } = useContext(FlightContext);
   useEffect(() => {
-    getFlights();
+    getFlights().catch(null);
   }, []);
+
+  console.log(flights);
   return (
     <div>
-      <h1>Home</h1>
+      <FlightList flights={flights} />
     </div>
   );
 }
