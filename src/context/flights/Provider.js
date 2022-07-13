@@ -3,7 +3,11 @@ import { useState } from "react";
 
 import apiCall from "../../api";
 
-const accessToken = "9A6IGwufIWolkGvs58MbzJ57q4HQ";
+
+
+console.log(`DesdeFunction: ${localStorage.getItem("token")}`);
+
+const accessToken = localStorage.getItem("token");
 
 export default function FlightProvider({ children }) {
   const [flights, setFlights] = useState([]);
@@ -44,10 +48,9 @@ export default function FlightProvider({ children }) {
         },
       });
 
-      setFlightDetail(response.data[id - 1]);
-      console.log(response.data[id - 1]);
-      console.log(`DATA.ID2: ${response.data[id - 1].id}`);
-      return response.data[id - 1];
+      setFlightDetail(response.data[id - 1].itineraries);
+      console.log(response.data[id - 1].itineraries);
+      return response.data[id - 1].itineraries;
     } catch (error) {
       setFlights({});
     } finally {
