@@ -59,6 +59,8 @@ getAcces();
 
 // getAcces();
 
+setTimeout(() => { (window.location.reload(true)) }, 1500000 )
+
 export function saveTokenInLocalStorage(tokenDetails) {
   localStorage.setItem("token", tokenDetails);
 

@@ -5,8 +5,6 @@ import FlightContext from "../../context/flights";
 
 import FlightListDetail from "./components/FlightListDetail";
 
-
-
 export default function FlightDetail2() {
   const { id } = useParams();
   const { getFlightDetail, FlightDetail, isLoading } =
@@ -19,11 +17,11 @@ export default function FlightDetail2() {
   if (isLoading) {
     return <div>Cargando Vuelos...</div>;
   }
-  console.log(`Detalle : ${FlightDetail[0].duration}`);
+  console.log(`Detalle : ${FlightDetail}`);
 
   return (
     <>
-    <FlightListDetail  FlightDetail={FlightDetail} />
+      <FlightListDetail FlightDetail={FlightDetail} />
     </>
   );
 }
