@@ -1,9 +1,9 @@
 import FlightListItem from "./FlightListItem";
 
-export default function FlightList({ flights }) {
+export default function FlightList({ flightFull }) {
   return (
     <>
-      {flights?.map((flight, index) => (
+      {flightFull?.map((flight, index) => (
         <FlightListItem key={index} {...flight} />
       ))}
     </>

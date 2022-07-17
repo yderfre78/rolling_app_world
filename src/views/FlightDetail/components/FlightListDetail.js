@@ -1,15 +1,17 @@
-
-
-
 import FlightListItemDetail from "./FlightListItemDetail";
 
-export default function FlightListDetail({ flightDetails }) {
-  console.log(`Desde Fligth list item detail: ${flightDetails}`);
+export default function FlightListDetail({ flight }) {
+  console.log(`Desde Fligth list item detail: ${flight}`);
   return (
     <>
-      {flightDetails?.map((flightDetail, index) => (
-        <FlightListItemDetail key={index} {...flightDetail} />
-      ))}
+      <div className="container">
+        <h1 className=" mt-5 mb-1 mr-2 text-center ">ITINERARIOS</h1>
+        <h2 className=" mt-5 mb-1 mr-2 text-center ">Salida</h2>
+        {flight?.map((flightDetaiL, index) => (
+          <FlightListItemDetail key={index} {...flightDetaiL} />
+        ))}
+        <h2 className=" mt-5 mb-5 mr-2 text-center ">Regreso</h2>
+      </div>
     </>
   );
 }

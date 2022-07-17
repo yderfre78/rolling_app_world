@@ -3,10 +3,9 @@ import FlightContext from "../../context/flights";
 import FlightList from "./components/FlightList";
 
 export default function Home() {
-  const { getFlights, flights, isLoading } = useContext(FlightContext);
-  useEffect(() => {
-    getFlights().catch(null);
-  }, []);
+  const { flightFull, isLoading } = useContext(FlightContext);
+
+
   if (isLoading) {
     return <div>Cargando Vuelos...</div>;
   }
@@ -14,7 +13,7 @@ export default function Home() {
   // console.log(`Desde Listas ${flights}`);
   return (
     <div>
-      <FlightList flights={flights} />
+      <FlightList flightFull={flightFull} />
     </div>
   );
 }

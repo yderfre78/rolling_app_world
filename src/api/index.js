@@ -20,6 +20,9 @@ export default async function apiCall({
     console.log(error.response.status);
     if (error.response.status === 401) {
       getAcces();
+      setTimeout(() => {
+        window.location.reload(true);
+      }, 5000);
     }
     Promise.reject(error);
   }
@@ -39,27 +42,19 @@ const getAcces = () => {
     redirect: "follow",
   };
 
-  let respAc = fetch(
-    "https://test.api.amadeus.com/v1/security/oauth2/token",
-    requestOptions
-  )
+  fetch("https://test.api.amadeus.com/v1/security/oauth2/token", requestOptions)
     .then((response) => response.json())
     .then((result) => {
- 
       saveTokenInLocalStorage(result.access_token);
-      
     })
     .catch((error) => console.log("error", error));
-  let json = respAc.then((result) => result.access_token);
-  console.log(json);
-  return json;
 };
-
-getAcces();
 
 // getAcces();
 
-setTimeout(() => { (window.location.reload(true)) }, 1500000 )
+// getAcces();
+
+
 
 export function saveTokenInLocalStorage(tokenDetails) {
   localStorage.setItem("token", tokenDetails);

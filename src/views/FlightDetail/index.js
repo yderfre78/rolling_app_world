@@ -7,21 +7,21 @@ import FlightListDetail from "./components/FlightListDetail";
 
 export default function FlightDetail2() {
   const { id } = useParams();
-  const { getFlightDetail, FlightDetail, isLoading } =
-    useContext(FlightContext);
+  const { flightFull, isLoading } = useContext(FlightContext);
 
-  useEffect(() => {
-    getFlightDetail(id).catch(null);
-  }, []);
+  // useEffect(() => {
+  //   getFlightFull().catch(null);
+  // }, []);
 
   if (isLoading) {
     return <div>Cargando Vuelos...</div>;
   }
-  console.log(`Detalle : ${FlightDetail}`);
+  console.log(`Detalle : ${flightFull[id - 1].itineraries}`);
+  const flight = flightFull[id - 1].itineraries;
 
   return (
     <>
-      <FlightListDetail FlightDetail={FlightDetail} />
+      <FlightListDetail flight={flight} />
     </>
   );
 }
