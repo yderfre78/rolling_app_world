@@ -10,6 +10,8 @@ import Autocomplete from "@mui/material/Autocomplete";
 import { Form, Formik } from "formik";
 let defaultDate = new Date();
 
+
+
 export default function FormFull() {
   // const { origin, destination, departureDate, returnDate, adults, children  } = useParams();
   const navigate = useNavigate();
@@ -55,13 +57,20 @@ export default function FormFull() {
   //    .catch(null);
   //   }, []);
 
+
+
+ 
+
+
+
   return (
     <>
-      <div spacing={1} sx={{ width: 300 }} className="container mt-5">
+      <div spacing={1} sx={{ width: 300 }} className="container bg-white mt-5 p-5">
         <Formik>
           <Form onSubmit={HandleSubmit}>
             <div className="row">
               <div className="col">
+
                 <Autocomplete
                   id="origin"
                   sx={{ width: 300 }}

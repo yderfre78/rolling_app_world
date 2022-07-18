@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { useSpring, animated } from "react-spring";
 import "./paralal.css";
@@ -19,45 +20,47 @@ export default function InitParalal() {
     config: { mass: 10, tension: 550, friction: 140 },
   }));
   return (
+    <>
+    <div className="container-full-body">
     <div
-      class="container"
+      className="container"
       onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
     >
       <animated.div
-        class="card8"
+        className="card8"
         style={{ transform: props.xy.interpolate(trans8) }}
       />
 
       <animated.div
-        class="card7"
+        className="card7"
         style={{ transform: props.xy.interpolate(trans7) }}
       />
       <animated.div
-        class="card6"
+        className="card6"
         style={{ transform: props.xy.interpolate(trans6) }}
       />
       <animated.div
-        class="card5"
+        className="card5"
         style={{ transform: props.xy.interpolate(trans5) }}
       />
       <animated.div
-        class="card4"
+        className="card4"
         style={{ transform: props.xy.interpolate(trans4) }}
       />
       <animated.div
-        class="card3"
+        className="card3"
         style={{ transform: props.xy.interpolate(trans3) }}
       />
       <animated.div
-        class="card2"
+        className="card2"
         style={{ transform: props.xy.interpolate(trans2) }}
       />
       <animated.div
-        class="card1"
+        className="card1"
         style={{ transform: props.xy.interpolate(trans1) }}
       />
 
-      <div className="container container-cards">
+      <div className="container container-cards ">
         <div className="row">
           <div className="col">
             <div className="card  card-init">
@@ -72,9 +75,12 @@ export default function InitParalal() {
                     Vuelos de ida selecciona fecha y numero de pasajeros
                   </p>
                 </div>
-                <div className="card-action"></div>
-
-                <h1>Rolling The World</h1>
+                <div className="card-action text-center pb-3">
+                <Link className="btn btn-secondary px-5" to={`/search/departure`}>
+                    Buscar
+                  </Link>
+                </div>
+           
               </div>
             </div>
           </div>
@@ -96,20 +102,27 @@ export default function InitParalal() {
                   className=" w-100 h-25"
                   src="https://yderfre.xyz/assets/paral-react/ida-regreso3-min.jpg"
                 />
-                <h3 className="text-center pt-2">Busca Vuelos de Ida y regreso</h3>
+                <h3 className="text-center pt-2">
+                  Busca Vuelos de Ida y regreso
+                </h3>
                 <div className="card-content">
                   <p className="text-center">
-                    Vuelos de ida-regreso: selecciona fecha y numero de pasajeros
+                    Vuelos de ida-regreso: selecciona fecha y numero de
+                    pasajeros
                   </p>
                 </div>
-                <div className="card-action"></div>
-
-                <h1>Rolling The World</h1>
+                <div className="card-action text-center pb-3">
+                  <Link className="btn btn-secondary px-5" to={`/search/departure/return`}>
+                    Buscar
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    </div>
+    </>
   );
 }

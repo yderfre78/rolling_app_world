@@ -1,12 +1,23 @@
-
 html,
 body,
 #root {
+  /* width: 100%;
+  height: 100%; */
+  margin: 0;
+  padding: 0;
+
+  background-image: url(https://yderfre.xyz/assets/paral-react/fondo-min.png);
+
+
+}
+
+.container-full-body {
+  overflow: hidden;
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
-  background-image: url(https://yderfre.xyz/assets/paral-react/fondo-min.png);
+ 
 }
 
 body {
@@ -25,7 +36,7 @@ body {
 
 #root {
   overflow: hidden;
-  background-image: url(https://yderfre.xyz/assets/paral-react/fondo-min.png);
+  /* background-image: url(https://yderfre.xyz/assets/paral-react/fondo-min.png); */
 }
 
 
@@ -80,11 +91,13 @@ body {
   max-height: 100ch;
   background-image: url(https://yderfre.xyz/assets/paral-react/layer4-min.png);
 }
+
 .card5 {
   width: 25ch;
   height: 25ch;
   background-image: url(https://yderfre.xyz/assets/paral-react/layer5-min.png);
 }
+
 .card6 {
   min-width: 150ch;
   min-height: 150ch;
@@ -92,9 +105,10 @@ body {
   height: 100vw;
   max-width: 100ch;
   max-height: 100ch;
-position: absolute;
+  position: absolute;
   background-image: url(https://yderfre.xyz/assets/paral-react/layer6-min.png);
 }
+
 .card7 {
   min-width: 150ch;
   min-height: 150ch;
@@ -102,9 +116,10 @@ position: absolute;
   height: 100vw;
   max-width: 100ch;
   max-height: 100ch;
-position: absolute;
+  position: absolute;
   background-image: url(https://yderfre.xyz/assets/paral-react/layer10-min.png);
 }
+
 .card8 {
   min-width: 150ch;
   min-height: 50ch;
@@ -115,6 +130,7 @@ position: absolute;
 
   background-image: url(https://yderfre.xyz/assets/paral-react/layer11-min.png);
 }
+
 .card9 {
   width: 25ch;
   height: 25ch;
@@ -129,11 +145,11 @@ position: absolute;
   justify-content: center;
 }
 
-.card-init-info{
+.card-init-info {
   position: absolute;
 }
-.container-cards
-{
+
+.container-cards {
   position: absolute;
   width: 100%;
   height: 100%;

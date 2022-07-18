@@ -6,7 +6,7 @@ import FlightDetail from "../views/FlightDetail";
 import ScrollToTop from "../components/ScrollToTop";
 import FormFull from "../views/Form";
 import InitParalal from "../views/InitParalal";
-
+ import FormDeparture from "../views/FormDeparture";
 
 
 export default function RoutesApp() {
@@ -14,7 +14,9 @@ export default function RoutesApp() {
   return (
     <Routes>
       <Route path="/" element={<InitParalal/>}></Route>
-      <Route path="/search" element={<FormFull />}></Route>
+      <Route path="/search/departure/return" element={<FormFull />}></Route>
+      <Route path="/search/departure/" element={<FormDeparture />}></Route>
+
       <Route path="/list" element={<Home />} exact />
       <Route path="/flight/:id" element={<FlightDetail />}></Route>
       <Route path="*" element={<FourOFour />} />

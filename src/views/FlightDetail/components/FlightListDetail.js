@@ -4,7 +4,7 @@ export default function FlightListDetail({ flight }) {
   console.log(`Desde Fligth list item detail: ${flight}`);
   return (
     <>
-      <div className="container">
+      <div className="container-details">
         <h1 className=" mt-5 mb-1 mr-2 text-center ">ITINERARIOS</h1>
         <h2 className=" mt-5 mb-1 mr-2 text-center ">Salida</h2>
         {flight?.map((flightDetaiL, index) => (
