@@ -10,7 +10,7 @@ export default function FlightListItem({
   return (
     <>
       <div className="container">
-        <div className="row mt-5 card2 card-block p-3 text-center p-5 ">
+        <div className="row mt-5 card2-fligt card-block p-3 text-center p-5 ">
           <div>{id}</div>
           <div>Index: {index}</div>
 
