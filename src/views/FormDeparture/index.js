@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-
+import React, { useState, useContext } from "react";
+import FlightContext from "../../context/flights";
 import { useNavigate } from "react-router-dom";
 
 import Select from "@mui/material/Select";
@@ -8,12 +8,10 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import { Form, Formik } from "formik";
-import FormControl from "@mui/material/FormControl";
-// import numbersPassengers from "./data";
-// import codeIsoAirport from "./data";
 
 import { useSpring, animated } from "react-spring";
 import "../InitParalal/paralal.css";
+
 let defaultDate = new Date();
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
@@ -45,13 +43,11 @@ export default function FormDeparture() {
   const [adults, setAdults] = useState("");
   const [childrens, setChildrens] = useState("");
   const [fechaSeleccionada] = useState(defaultDate);
-  const handleChange = (event) => {
-    setAdults(event.target.value);
-  };
-  const handleChangeChild = (event) => {
-    setChildrens(event.target.value);
-  };
+  const { getFlighTOnlydeparture, FlighTOnlydeparture, isLoading } =
+    useContext(FlightContext);
+
   const HandleSubmit = (e, valores) => {
+    console.log(valores);
     e.preventDefault();
     setFormSend(true);
     console.log(valores);
@@ -62,16 +58,28 @@ export default function FormDeparture() {
     const destination = e.target.destination.value;
     const adults = e.target.adults.value;
     const childrens = e.target.childrens.value;
+   
 
     console.log(`Origin: ${origin}`);
-    console.log(`ReturnDate: ${returnDate}`);
+    // console.log(`ReturnDate: ${returnDate}`);
     console.log(`Destination: ${destination}`);
     console.log(`DepartureDate: ${departureDate}`);
     console.log(`Adults: ${adults}`);
     console.log(`Children: ${childrens}`);
-
-    // navigate("/list");
+    navigate("/list");
+    getFlighTOnlydeparture(
+      origin,
+      destination,
+      departureDate,
+      adults,
+      childrens
+    ).catch(null);
+    navigate("/list/departure");
   };
+
+  const [title, setTitle] = useState("");
+  const [leyend, setLeyend] = useState("");
+  const [errorTitle, setErrorTitle] = useState("");
 
   return (
     <>
@@ -119,150 +127,173 @@ export default function FormDeparture() {
               <div className="card">
                 <h2 className="text-center pt-2">Busca Vuelos de Ida</h2>
                 <div className="card-content">
-                  <Formik>
-                    <Form onSubmit={HandleSubmit} className="formulario">
-                      <div className="container">
-                        <div className="row">
-                          <div className="col">
-                            <Autocomplete
-                              id="origin"
-                              sx={{ width: 300 }}
-                              options={codeIsoAirport}
-                              autoHighlight
-                              onChange={(ev) => setOrigin(ev.target.value)}
-                              getOptionLabel={(option) => option.code}
-                              renderOption={(props, option) => (
-                                <Box
-                                  component="li"
-                                  sx={{ "& > img": { mr: 2, flexShrink: 0 } }}
-                                  {...props}
-                                >
-                                  {option.label}
-                                </Box>
-                              )}
-                              renderInput={(params) => (
-                                <TextField
-                                  {...params}
-                                  label="Origen"
-                                  inputProps={{
-                                    ...params.inputProps,
-                                    autoComplete: "new-password", // disable autocomplete and autofill
-                                  }}
-                                />
-                              )}
-                            />
-                          </div>
+                  <Formik
+                    // initialValues={{
+                    //   origin: "BOS",
+                    //   destination: "AL",
+                    //   departureDate: "",
+                    //   adults: "1",
+                    //   childrens: "1",
+                    // }}
+                    onSubmit={HandleSubmit}
+                  >
+                    {({ values, handleChange, handleSubmit, handleBlur }) => (
+                      <Form onSubmit={HandleSubmit} className="formulario">
+                        <div className="container">
+                          <div className="row">
+                            <div className="col">
+                              <Autocomplete
+                                id="origin"
+                                sx={{ width: 300 }}
+                                options={codeIsoAirport}
+                                autoHighlight
+                                onChange={(ev) => setOrigin(ev.target.value)}
+                                getOptionLabel={(option) => option.code}
+                                renderOption={(props, option) => (
+                                  <Box
+                                    component="li"
+                                    sx={{ "& > img": { mr: 2, flexShrink: 0 } }}
+                                    {...props}
+                                  >
+                                    {option.label}
+                                  </Box>
+                                )}
+                                renderInput={(params) => (
+                                  <TextField
+                                    {...params}
+                                    label="Origen"
+                                    inputProps={{
+                                      ...params.inputProps,
+                                      autoComplete: "new-password", // disable autocomplete and autofill
+                                    }}
+                                  />
+                                )}
+                              />
+                            </div>
 
-                          <div className="col">
-                            <Autocomplete
-                              id="destination"
-                              sx={{ width: 300 }}
-                              options={codeIsoAirport}
-                              autoHighlight
-                              onChange={(ev) => setDestination(ev.target.value)}
-                              getOptionLabel={(option) => option.code}
-                              renderOption={(props, option) => (
-                                <Box component="li" {...props}>
-                                  {option.label} ({option.code})
-                                </Box>
-                              )}
-                              renderInput={(params) => (
-                                <TextField
-                                  {...params}
-                                  label="Destino"
-                                  inputProps={{
-                                    ...params.inputProps,
-                                    autoComplete: "Hola", // disable autocomplete and autofill
-                                  }}
-                                />
-                              )}
-                            />
-                          </div>
-                          <div className="col">
-                            <TextField
-                              sx={{ width: 300 }}
-                              id="departureDate"
-                              label="Salida"
-                              onChange={(ev) =>
-                                setDepartureDate(ev.target.value)
-                              }
-                              value={fechaSeleccionada
-                                .toISOString()
-                                .slice(0, 10)}
-                              type="date"
-                              defaultValue={defaultDate
-                                .toISOString()
-                                .slice(0, 10)}
-                              InputLabelProps={{
-                                shrink: true,
-                              }}
-                            />
+                            <div className="col">
+                              <Autocomplete
+                                error={errorTitle}
+                                helperText={leyend}
+                                id="destination"
+                                sx={{ width: 300 }}
+                                options={codeIsoAirport}
+                                autoHighlight
+                                onChange={(ev) => {
+                                  setDestination(ev.target.value);
+                                  if (title.length === "") {
+                                    setErrorTitle(true);
+                                    setLeyend("El campo no puede estar vacio");
+                                  } else {
+                                    setErrorTitle(false);
+                                    setLeyend("");
+                                  }
+                                }}
+                                getOptionLabel={(option) => option.code}
+                                renderOption={(props, option) => (
+                                  <Box component="li" {...props}>
+                                    {option.label} ({option.code})
+                                  </Box>
+                                )}
+                                renderInput={(params) => (
+                                  <TextField
+                                    variant="filled"
+                                    {...params}
+                                    label="Destino"
+                                    inputProps={{
+                                      ...params.inputProps,
+                                      autoComplete: "Hola", // disable autocomplete and autofill
+                                    }}
+                                  />
+                                )}
+                              />
+                            </div>
+                            <div className="col">
+                              <TextField
+                                sx={{ width: 300 }}
+                                id="departureDate"
+                                label="Salida"
+                                onChange={(ev) =>
+                                  setDepartureDate(ev.target.value)
+                                }
+                                value={fechaSeleccionada
+                                  .toISOString()
+                                  .slice(0, 10)}
+                                type="date"
+                                defaultValue={defaultDate
+                                  .toISOString()
+                                  .slice(0, 10)}
+                                InputLabelProps={{
+                                  shrink: true,
+                                }}
+                              />
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div className="container">
-                        <div className="row">
-                          <div className="col-6">
-                            <Autocomplete
-                              id="adults"
-                              sx={{ width: 300 }}
-                              options={numbersPassengers}
-                              autoHighlight
-                              onChange={(ev) => setAdults(ev.target.value)}
-                              getOptionLabel={(option) => option.value}
-                              renderOption={(props, option) => (
-                                <Box component="li" {...props}>
-                                  {option.label}
-                                </Box>
-                              )}
-                              renderInput={(params) => (
-                                <TextField
-                                  {...params}
-                                  label="Adultos"
-                                  inputProps={{
-                                    ...params.inputProps,
-                                    autoComplete: "Hola", // disable autocomplete and autofill
-                                  }}
-                                />
-                              )}
-                            />
-                          </div>
-                          <div className="col-6">
-                            <Autocomplete
-                              id="childrens"
-                              sx={{ width: 300 }}
-                              options={numbersPassengers}
-                              autoHighlight
-                              onChange={(ev) => setChildrens(ev.target.value)}
-                              getOptionLabel={(option) => option.value}
-                              renderOption={(props, option) => (
-                                <Box component="li" {...props}>
-                                  {option.label}
-                                </Box>
-                              )}
-                              renderInput={(params) => (
-                                <TextField
-                                  {...params}
-                                  label="Niños"
-                                  inputProps={{
-                                    ...params.inputProps,
-                                    autoComplete: "Hola", // disable autocomplete and autofill
-                                  }}
-                                />
-                              )}
-                            />
+                        <div className="container">
+                          <div className="row">
+                            <div className="col-6">
+                              <Autocomplete
+                                id="adults"
+                                sx={{ width: 300 }}
+                                options={numbersPassengers}
+                                autoHighlight
+                                onChange={(ev) => setAdults(ev.target.value)}
+                                getOptionLabel={(option) => option.value}
+                                renderOption={(props, option) => (
+                                  <Box component="li" {...props}>
+                                    {option.label}
+                                  </Box>
+                                )}
+                                renderInput={(params) => (
+                                  <TextField
+                                    {...params}
+                                    label="Adultos"
+                                    inputProps={{
+                                      ...params.inputProps,
+                                      autoComplete: "Hola", // disable autocomplete and autofill
+                                    }}
+                                  />
+                                )}
+                              />
+                            </div>
+                            <div className="col-6">
+                              <Autocomplete
+                                id="childrens"
+                                sx={{ width: 300 }}
+                                options={numbersPassengers}
+                                autoHighlight
+                                onChange={(ev) => setChildrens(ev.target.value)}
+                                getOptionLabel={(option) => option.value}
+                                renderOption={(props, option) => (
+                                  <Box component="li" {...props}>
+                                    {option.label}
+                                  </Box>
+                                )}
+                                renderInput={(params) => (
+                                  <TextField
+                                    {...params}
+                                    label="Niños"
+                                    inputProps={{
+                                      ...params.inputProps,
+                                      autoComplete: "Hola", // disable autocomplete and autofill
+                                    }}
+                                  />
+                                )}
+                              />
+                            </div>
                           </div>
                         </div>
-                      </div>
 
-                      <button
-                        onClick={navigate}
-                        type="submit"
-                        className="btn btn-primary"
-                      >
-                        Buscar Vuelos
-                      </button>
-                    </Form>
+                        <button
+                          // onClick={navigate}
+                          type="submit"
+                          className="btn btn-primary"
+                        >
+                          Buscar Vuelos
+                        </button>
+                      </Form>
+                    )}
                   </Formik>
                 </div>
               </div>

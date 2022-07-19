@@ -13,6 +13,7 @@ export default function FlightProvider({ children }) {
   const [FlightDetail, setFlightDetail] = useState({});
   const [FlightFullDetail, setFlightFullDetail] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const [FlighTOnlydeparture, setFlighTOnlydeparture] = useState({});
 
   const getFlights = async () => {
     try {
@@ -159,6 +160,46 @@ export default function FlightProvider({ children }) {
     }
   };
 
+  const getFlighTOnlydeparture = async (
+    origin,
+    destination,
+    departureDate,
+    adults,
+    childrens
+  ) => {
+    if (!origin || !destination || !departureDate || !adults || !childrens)
+      Promise.reject("faltan datos");
+    try {
+      setIsLoading(true);
+      const response = await apiCall({
+        method: "get",
+        url:
+          "https://test.api.amadeus.com/v2/shopping/flight-offers?originLocationCode=" +
+          origin +
+          "&destinationLocationCode=" +
+          destination +
+          "&departureDate=" +
+          departureDate +
+          "&adults=" +
+          adults +
+          "&children=" +
+          childrens,
+
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
+
+      setFlighTOnlydeparture(response.data);
+      console.log(response.data);
+      return response.data;
+    } catch (error) {
+      setFlighTOnlydeparture({});
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <FlightContext.Provider
       value={{
@@ -171,6 +212,8 @@ export default function FlightProvider({ children }) {
         flightFull,
         getFlightFullDetail,
         FlightFullDetail,
+        getFlighTOnlydeparture,
+        FlighTOnlydeparture,
       }}
     >
       {children}
