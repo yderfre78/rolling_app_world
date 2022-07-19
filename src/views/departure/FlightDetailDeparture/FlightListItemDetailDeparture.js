@@ -3,6 +3,7 @@ import moment from "moment";
 import { FaPlane } from "react-icons/fa";
 export default function FlightListItemDetail({ index, duration, segments }) {
   console.log(duration);
+  
   const minutes = moment.duration(duration).minutes();
   const hours = moment.duration(duration).hours();
 
@@ -13,7 +14,7 @@ export default function FlightListItemDetail({ index, duration, segments }) {
   const durationHoursArrival = moment(segments[0].arrival.at).hour();
   const durationMinutesDeparture = moment(segments[0].departure.at).minute();
   const durationMinutesArrival = moment(segments[0].arrival.at).minute();
-
+  moment.locale("es");
   const hoursTotal = durationHoursArrival - durationHoursDeparture;
   const hourstMultiplier = hoursTotal * 60;
   const minutesTotal = durationMinutesArrival - durationMinutesDeparture;
@@ -25,7 +26,7 @@ export default function FlightListItemDetail({ index, duration, segments }) {
   const totalMinutes2 = totalMinutes % 60;
   console.log(`Horas: ${totalHoursRounded} Minutos: ${totalMinutes2}`);
 
-  moment.locale("es");
+ 
 
   return (
     <>

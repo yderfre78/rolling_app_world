@@ -43,8 +43,9 @@ export default function FormDeparture() {
   const [adults, setAdults] = useState("");
   const [childrens, setChildrens] = useState("");
   const [fechaSeleccionada] = useState(defaultDate);
-  const { getFlighTOnlydeparture, FlighTOnlydeparture, isLoading } =
-    useContext(FlightContext);
+  const { getFlighTOnlydeparture, isLoading } = useContext(FlightContext);
+  const [failure, setFailure] = useState(false);
+  const [failureMessage, setFailureMessage] = useState("");
 
   const HandleSubmit = (e, valores) => {
     console.log(valores);
@@ -57,8 +58,30 @@ export default function FormDeparture() {
     const origin = e.target.origin.value;
     const destination = e.target.destination.value;
     const adults = e.target.adults.value;
-    const childrens = e.target.childrens.value;
-   
+    let childrens = e.target.childrens.value;
+    if (!origin.trim()) {
+      setFailure(true);
+      setFailureMessage("Origen es obligatorio");
+      return;
+    }
+    if (!destination.trim()) {
+      setFailure(true);
+      setFailureMessage("Destino es obligatorio");
+      return;
+    }
+    if (!departureDate.trim()) {
+      setFailure(true);
+      setFailureMessage("Fecha de Salida es obligatorio");
+      return;
+    }
+    if (!adults.trim()) {
+      setFailure(true);
+      setFailureMessage("Numero de adultos es obligatorio");
+      return;
+    }
+    if (!childrens.trim()) {
+      childrens = "0";
+    }
 
     console.log(`Origin: ${origin}`);
     // console.log(`ReturnDate: ${returnDate}`);
@@ -141,6 +164,11 @@ export default function FormDeparture() {
                       <Form onSubmit={HandleSubmit} className="formulario">
                         <div className="container">
                           <div className="row">
+                            {failure ? (
+                              <span> {failureMessage}</span>
+                            ) : (
+                              <span></span>
+                            )}
                             <div className="col">
                               <Autocomplete
                                 id="origin"
