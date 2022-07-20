@@ -22,9 +22,7 @@ export default function FlightListItem({
           </h1>
           <div className="row w-100 align-items-center">
             <div className="col text-center">
-              <button className="btn regular-button w-50 align-center btn-detail">
-                <Link className="btn-text-l" to={`/flight/${id}`}>Ver Detalle</Link>
-              </button>
+                <Link className="btn button-g  px-5 w-50 align-center" to={`/flight/${id}`}>Ver Detalle</Link>
             </div>
           </div>
         </div>

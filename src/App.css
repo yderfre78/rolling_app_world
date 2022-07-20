@@ -125,7 +125,7 @@ div [class^="col-"] {
   justify-content: center;
 }
 
-.btn-detail {
+/* .btn-detail {
   background-color: #d9dfeb;
 }
 
@@ -136,7 +136,7 @@ div [class^="col-"] {
 .btn-text-l {
   text-decoration: none;
   color: black;
-}
+} */
 
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
@@ -233,6 +233,31 @@ body {
   background: #0051ff;
 }
 
+
+
+.button-g {
+  /* display: block; */
+  background: #0085FF;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  transition: .3s ease all;
+}
+.button-g:hover {
+  background: #0051ff;
+  color: #fff;
+}
+
+.plane-icon{
+  font-size: 5rem;
+}
+
 .formulario .exito {
   text-align: center;
   font-size: 14px;
@@ -324,4 +349,7 @@ body {
     background-position: -36px -36px;
     background-size: 80px 80px;
   }
+}
+.fa-right, .fa-left{
+  font-size: 4rem;
 }

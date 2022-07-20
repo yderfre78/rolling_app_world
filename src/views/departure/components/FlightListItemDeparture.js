@@ -10,6 +10,7 @@ export default function FlightListItemDeparture({
   return (
     <>
       <div className="container">
+    
         <div className="row mt-5 card2-fligt card-block p-3 text-center p-5 ">
           <div>{id}</div>
           <div>Index: {index}</div>
@@ -21,10 +22,10 @@ export default function FlightListItemDeparture({
             {price.base}
           </h1>
           <div className="row w-100 align-items-center">
-            <div className="col text-center">
-              <button className="btn regular-button w-50 align-center btn-detail">
-                <Link className="btn-text-l" to={`/flight/departure/${id}`}>Ver Detalle</Link>
-              </button>
+          <div className="card-action text-center pb-3">
+            
+                <Link className="btn button-g  px-5 w-50 align-center" to={`/flight/departure/${id}`}>Ver Detalle</Link>
+    
             </div>
           </div>
         </div>

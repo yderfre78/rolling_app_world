@@ -19,19 +19,28 @@ export default async function apiCall({
   } catch (error) {
     console.log(error.response.status);
     if (error.response.status === 400) {
-      window.location.replace("/");
+      // window.location.replace("/");
     }
 
     if (error.response.status === 401) {
-      window.location.replace("/");
       getAcces();
+
       setTimeout(() => {
+        window.location.replace("/");
         window.location.reload(true);
-      }, 5000);
+      }, 3000);
     }
     Promise.reject(error);
   }
 }
+
+setTimeout(() => {
+  getAcces();
+  setTimeout(() => {
+    window.location.replace("/");
+    window.location.reload(true);
+  }, 3000);
+}, 1620000);
 
 const myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
