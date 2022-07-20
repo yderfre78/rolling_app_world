@@ -7,7 +7,11 @@ export default function Home() {
 
 
   if (isLoading) {
-    return <div>Cargando Vuelos...</div>;
+<div class="d-flex justify-content-center">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Cargando...</span>
+  </div>
+</div>
   }
 
   // console.log(`Desde Listas ${flights}`);

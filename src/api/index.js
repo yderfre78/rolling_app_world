@@ -18,7 +18,12 @@ export default async function apiCall({
     return response.data;
   } catch (error) {
     console.log(error.response.status);
+    if (error.response.status === 400) {
+      window.location.replace("/");
+    }
+
     if (error.response.status === 401) {
+      window.location.replace("/");
       getAcces();
       setTimeout(() => {
         window.location.reload(true);
@@ -53,8 +58,6 @@ const getAcces = () => {
 // getAcces();
 
 // getAcces();
-
-
 
 export function saveTokenInLocalStorage(tokenDetails) {
   localStorage.setItem("token", tokenDetails);

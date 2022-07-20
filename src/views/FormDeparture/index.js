@@ -2,8 +2,6 @@ import React, { useState, useContext } from "react";
 import FlightContext from "../../context/flights";
 import { useNavigate } from "react-router-dom";
 
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
@@ -11,6 +9,8 @@ import { Form, Formik } from "formik";
 
 import { useSpring, animated } from "react-spring";
 import "../InitParalal/paralal.css";
+
+import moment from "moment";
 
 let defaultDate = new Date();
 
@@ -42,9 +42,20 @@ export default function FormDeparture() {
   const [returnDate, setReturnDate] = useState("");
   const [adults, setAdults] = useState("");
   const [childrens, setChildrens] = useState("");
-  const [fechaSeleccionada] = useState(defaultDate);
+
+  const [fechaSeleccionada, setFechaSeleccionada] = useState(defaultDate);
   const { getFlighTOnlydeparture, isLoading } = useContext(FlightContext);
+
   const [failure, setFailure] = useState(false);
+  const [failureOrigin, setFailureOrigin] = useState(false);
+  const [failureDestination, setFailureDestination] = useState(false);
+  const [failureDepartureDate, setFailureDepartureDate] = useState(false);
+  const [failureMessageOrigin, setFailureMessageOrigin] = useState("");
+  const [failureMessageDestination, setFailureMessageDestination] =
+    useState("");
+  const [failureMessageDepartureDate, setFailureMessageDepartureDate] =
+    useState("");
+
   const [failureMessage, setFailureMessage] = useState("");
 
   const HandleSubmit = (e, valores) => {
@@ -59,24 +70,54 @@ export default function FormDeparture() {
     const destination = e.target.destination.value;
     const adults = e.target.adults.value;
     let childrens = e.target.childrens.value;
+
     if (!origin.trim()) {
-      setFailure(true);
-      setFailureMessage("Origen es obligatorio");
+      setFailureOrigin(true);
+      setFailureMessageOrigin("Origen es obligatorio");
+      setTimeout(() => setFailureOrigin(false), 5000);
+      setTimeout(() => setFailureMessageOrigin(false), 5000);
       return;
     }
+    if (origin === destination) {
+      setFailureOrigin(true);
+      setFailureMessageOrigin("Origen y destino deben ser diferentes");
+      setTimeout(() => setFailureOrigin(false), 5000);
+      setTimeout(() => setFailureMessageOrigin(false), 5000);
+      return;
+    }
+
     if (!destination.trim()) {
-      setFailure(true);
-      setFailureMessage("Destino es obligatorio");
+      setFailureDestination(true);
+      setFailureMessageDestination("Destino es obligatorio");
+      setTimeout(() => setFailureDestination(false), 5000);
+      setTimeout(() => setFailureMessageDestination(false), 5000);
       return;
     }
+
     if (!departureDate.trim()) {
-      setFailure(true);
-      setFailureMessage("Fecha de Salida es obligatorio");
+      setFailureDepartureDate(true);
+      setFailureMessageDepartureDate("Fecha de Salida es obligatorio");
+      setTimeout(() => setFailureDepartureDate(false), 5000);
+      setTimeout(() => setFailureMessageDepartureDate(false), 5000);
+
       return;
     }
+    const compareDate = moment(new Date()).format("YYYY-MM-DD");
+    if (compareDate >= departureDate) {
+      setFailureDepartureDate(true);
+      setFailureMessageDepartureDate(
+        "La fecha de salida no puede ser menor a la actual"
+      );
+      setTimeout(() => setFailureDepartureDate(false), 5000);
+      setTimeout(() => setFailureMessageDepartureDate(false), 5000);
+      return;
+    }
+
     if (!adults.trim()) {
       setFailure(true);
       setFailureMessage("Numero de adultos es obligatorio");
+      setTimeout(() => setFailure(false), 5000);
+      setTimeout(() => setFailureMessage(false), 5000);
       return;
     }
     if (!childrens.trim()) {
@@ -100,9 +141,9 @@ export default function FormDeparture() {
     navigate("/list/departure");
   };
 
-  const [title, setTitle] = useState("");
-  const [leyend, setLeyend] = useState("");
-  const [errorTitle, setErrorTitle] = useState("");
+  // const [title, setTitle] = useState("");
+  // const [leyend, setLeyend] = useState("");
+  // const [errorTitle, setErrorTitle] = useState("");
 
   return (
     <>
@@ -164,11 +205,6 @@ export default function FormDeparture() {
                       <Form onSubmit={HandleSubmit} className="formulario">
                         <div className="container">
                           <div className="row">
-                            {failure ? (
-                              <span> {failureMessage}</span>
-                            ) : (
-                              <span></span>
-                            )}
                             <div className="col">
                               <Autocomplete
                                 id="origin"
@@ -188,6 +224,8 @@ export default function FormDeparture() {
                                 )}
                                 renderInput={(params) => (
                                   <TextField
+                                    error={failureOrigin}
+                                    helperText={failureMessageOrigin}
                                     {...params}
                                     label="Origen"
                                     inputProps={{
@@ -201,21 +239,14 @@ export default function FormDeparture() {
 
                             <div className="col">
                               <Autocomplete
-                                error={errorTitle}
-                                helperText={leyend}
+                                // error={failure}
+                                // helperText={failureMessage}
                                 id="destination"
                                 sx={{ width: 300 }}
                                 options={codeIsoAirport}
                                 autoHighlight
                                 onChange={(ev) => {
                                   setDestination(ev.target.value);
-                                  if (title.length === "") {
-                                    setErrorTitle(true);
-                                    setLeyend("El campo no puede estar vacio");
-                                  } else {
-                                    setErrorTitle(false);
-                                    setLeyend("");
-                                  }
                                 }}
                                 getOptionLabel={(option) => option.code}
                                 renderOption={(props, option) => (
@@ -225,6 +256,8 @@ export default function FormDeparture() {
                                 )}
                                 renderInput={(params) => (
                                   <TextField
+                                    helperText={failureMessageDestination}
+                                    error={failureDestination}
                                     variant="filled"
                                     {...params}
                                     label="Destino"
@@ -236,8 +269,11 @@ export default function FormDeparture() {
                                 )}
                               />
                             </div>
+
                             <div className="col">
                               <TextField
+                                helperText={failureMessageDepartureDate}
+                                error={failureDepartureDate}
                                 sx={{ width: 300 }}
                                 id="departureDate"
                                 label="Salida"
@@ -275,6 +311,8 @@ export default function FormDeparture() {
                                 )}
                                 renderInput={(params) => (
                                   <TextField
+                                    error={failure}
+                                    helperText={failureMessage}
                                     {...params}
                                     label="Adultos"
                                     inputProps={{
