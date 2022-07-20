@@ -5,14 +5,19 @@ export default function Departure() {
   const { FlighTOnlydeparture, isLoading } = useContext(FlightContext);
 
   if (isLoading) {
-    <div class="d-flex justify-content-center">
-      <div class="spinner-border" role="status">
-        <span class="visually-hidden">Cargando...</span>
+    return (
+      <div>
+        <div className="loader-background">
+          <div className="loader"></div>
+        </div>
+        <div className="text-center" >
+        <h1 className="text-white">Cargando Vuelos...</h1>
+        </div>
       </div>
-    </div>;
+    );
   }
 
-  // console.log(`Desde Listas ${flights}`);
+
   return (
     <div>
       <FlightListDeparture FlighTOnlydeparture={FlighTOnlydeparture} />

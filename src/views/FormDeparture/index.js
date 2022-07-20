@@ -130,7 +130,7 @@ export default function FormDeparture() {
     console.log(`DepartureDate: ${departureDate}`);
     console.log(`Adults: ${adults}`);
     console.log(`Children: ${childrens}`);
-    navigate("/list");
+
     getFlighTOnlydeparture(
       origin,
       destination,

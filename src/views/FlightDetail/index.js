@@ -14,11 +14,7 @@ export default function FlightDetail2() {
   // }, []);
 
   if (isLoading) {
-<div class="d-flex justify-content-center">
-  <div class="spinner-border" role="status">
-    <span class="visually-hidden">Cargando...</span>
-  </div>
-</div>
+    return <div> <h1 className="text-white"></h1> Cargando Vuelos...</div>;
   }
   console.log(`Detalle : ${flightFull[id - 1].itineraries}`);
   const flight = flightFull[id - 1].itineraries;

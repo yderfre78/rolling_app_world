@@ -166,10 +166,7 @@ export default function FormDeparture() {
     navigate("/list");
   };
 
-  // const [title, setTitle] = useState("");
-  // const [leyend, setLeyend] = useState("");
-  // const [errorTitle, setErrorTitle] = useState("");
-
+ 
   return (
     <>
       <div className="container-full-body">

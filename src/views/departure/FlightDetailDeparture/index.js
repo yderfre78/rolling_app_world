@@ -14,11 +14,7 @@ export default function FlightListDetailDepartures() {
   // }, []);
 
   if (isLoading) {
-    <div class="d-flex justify-content-center">
-  <div class="spinner-border" role="status">
-    <span class="visually-hidden">Cargando...</span>
-  </div>
-</div>
+    return <div> <h1 className="text-white"></h1> Cargando Vuelos...</div>;
   }
   console.log(`Detalle : ${FlighTOnlydeparture[id - 1].itineraries}`);
   const flight = FlighTOnlydeparture[id - 1].itineraries;
