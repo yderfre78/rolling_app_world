@@ -368,6 +368,7 @@ body {
 }
 
 .container-details{
+  margin-top: 3rem;
   margin-left: 15rem!important;
     margin-right: 15rem!important;
 }
@@ -379,4 +380,16 @@ body {
   margin-right: 15rem!important;
   padding-top: 0.3rem;
 }
+.card-item-deta{
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 0px;
+  margin-bottom: 2px;
+  margin-left: 0.5rem;
+  margin-right: -1rem;
+}
+.container-fligth-list{
+margin-right: -2rem;
 
+}

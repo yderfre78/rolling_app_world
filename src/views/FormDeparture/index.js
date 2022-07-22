@@ -12,6 +12,8 @@ import { Form, Formik } from "formik";
 import { useSpring, animated } from "react-spring";
 import "../InitParalal/paralal.css";
 
+import codeIsoAirport from "../../utils/data"
+
 import moment from "moment";
 
 let defaultDate = new Date();
@@ -392,16 +394,17 @@ export const numbersPassengers = [
   { value: "10", label: "10" },
 ];
 
-export const codeIsoAirport = [
-  { code: "ATL", label: "Atlanta" },
-  { code: "BOS", label: "Boston" },
-  { code: "CHI", label: "Chicago" },
-  { code: "DAL", label: "Dallas" },
-  { code: "DEN", label: "Denver" },
-  { code: "LAX", label: "Los Angeles" },
-  { code: "NYC", label: "New York City" },
-  { code: "PHX", label: "Phoenix" },
-  { code: "SAN", label: "San Diego" },
-  { code: "SEA", label: "Seattle" },
-  { code: "WAS", label: "Washington" },
-];
+// export const codeIsoAirport = [
+//   { code: "ATL", label: "Atlanta" },
+//   { code: "BOS", label: "Boston" },
+//   { code: "CHI", label: "Chicago" },
+//   { code: "DAL", label: "Dallas" },
+//   { code: "DEN", label: "Denver" },
+//   { code: "LAX", label: "Los Angeles" },
+//   { code: "NYC", label: "New York City" },
+//   { code: "PHX", label: "Phoenix" },
+//   { code: "SAN", label: "San Diego" },
+//   { code: "SEA", label: "Seattle" },
+//   { code: "WAS", label: "Washington" },
+//   { code: "HKG", label: "Hong Kong" },
+// ];

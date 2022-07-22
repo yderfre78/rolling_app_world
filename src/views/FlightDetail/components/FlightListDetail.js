@@ -22,11 +22,9 @@ export default function FlightListDetail({ flight }) {
         </IconButton>
       </div>
       <div className="container-details">
-        <div className="conatainer">
-          <div className="row ">
-            <div className="mt-5 mb-5 card">
-              <h1 className=" p-3 text-center  ">ITINERARIOS</h1>
-            </div>
+        <div className="row ">
+          <div className="mt-5 mb-5 card-item-deta ">
+            <h1 className=" p-3 text-center  ">ITINERARIOS</h1>
           </div>
         </div>
 
@@ -43,9 +41,11 @@ export default function FlightListDetail({ flight }) {
               </div>
             </div>
           </div>
-          {flight?.map((flightDetaiL, index) => (
-            <FlightListItemDetail key={index} {...flightDetaiL} />
-          ))}
+          <div className="container-fligth-list">
+            {flight?.map((flightDetaiL, index) => (
+              <FlightListItemDetail key={index} {...flightDetaiL} />
+            ))}
+          </div>
         </div>
         <div className="container ">
           <div className="row">

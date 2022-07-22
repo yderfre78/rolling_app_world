@@ -31,9 +31,9 @@ export default function FlightListItemDetail({ duration, segments }) {
         console.log(`Horas: ${totalHoursRounded} Minutos: ${totalMinutes2}`);
         return (
           <div className="row" key={index}>
-            <div className="row mt-5 m-5">
+            <div className="row  ">
               <div className="col-md-12 col-sm-12 ">
-                <div className="card card-block p-3">
+                <div className=" card-item-deta card-block p-3">
                   <div className="row p-lg-5">
                     <div className="col-9">
                       <h5 className="text-right mb-4">
@@ -61,7 +61,7 @@ export default function FlightListItemDetail({ duration, segments }) {
                         {segment.aircraft.code}
                       </h2>
                       <h3 className=" mb-3 mr-2 text-center">
-                        {totalHoursRounded}hrs {totalMinutes2}mins
+                      {hours}Hrs {minutes}Mins
                       </h3>
                     </div>
                   </div>
