@@ -24,11 +24,9 @@ export default async function apiCall({
 
     if (error.response.status === 401) {
       getAcces();
-
       setTimeout(() => {
-        window.location.replace("/");
         window.location.reload(true);
-      }, 3000);
+      }, 4000);
     }
     Promise.reject(error);
   }
@@ -37,7 +35,6 @@ export default async function apiCall({
 setTimeout(() => {
   getAcces();
   setTimeout(() => {
-    window.location.replace("/");
     window.location.reload(true);
   }, 3000);
 }, 1620000);
@@ -60,6 +57,9 @@ const getAcces = () => {
     .then((response) => response.json())
     .then((result) => {
       saveTokenInLocalStorage(result.access_token);
+      setTimeout(() => {
+        window.location.replace("/");
+      }, 1000);
     })
     .catch((error) => console.log("error", error));
 };

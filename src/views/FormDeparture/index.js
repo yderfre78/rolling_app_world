@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react";
 import FlightContext from "../../context/flights";
 import { useNavigate } from "react-router-dom";
+import IconButton from "@mui/material/IconButton";
+import { FaArrowAltCircleLeft } from "react-icons/fa";
 
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -148,6 +150,21 @@ export default function FormDeparture() {
   return (
     <>
       <div className="container-full-body">
+        <div className="row">
+          <div className="text-align-left col ">
+            <IconButton
+              className="icon_button_back"
+              color="primary"
+              onClick={() => navigate(-1)}
+              aria-label="delete"
+              size="large"
+            >
+              <FaArrowAltCircleLeft fontSize="inherit" />
+              <h4 className="m-3">Volver</h4>
+            </IconButton>
+          </div>
+        </div>
+
         <div
           className="container"
           onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
@@ -191,16 +208,7 @@ export default function FormDeparture() {
               <div className="card">
                 <h2 className="text-center pt-2">Busca Vuelos de Ida</h2>
                 <div className="card-content">
-                  <Formik
-                    // initialValues={{
-                    //   origin: "BOS",
-                    //   destination: "AL",
-                    //   departureDate: "",
-                    //   adults: "1",
-                    //   childrens: "1",
-                    // }}
-                    onSubmit={HandleSubmit}
-                  >
+                  <Formik onSubmit={HandleSubmit}>
                     {({ values, handleChange, handleSubmit, handleBlur }) => (
                       <Form onSubmit={HandleSubmit} className="formulario">
                         <div className="container">
