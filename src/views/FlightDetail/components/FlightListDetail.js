@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 
-export default function FlightListDetail({ flight }) {
+export default function FlightListDetail({ flight }, {flight2 }) {
   const navigate = useNavigate();
-  console.log(`Desde Fligth list item detail: ${flight}`);
+  console.log(`Desde Fligth list item detail: ${flight}  ${flight2}`);
   return (
     <>
       <div className="text-align-left ">
@@ -25,6 +25,7 @@ export default function FlightListDetail({ flight }) {
         <div className="row ">
           <div className="mt-5 mb-5 card-item-deta ">
             <h1 className=" p-3 text-center  ">ITINERARIOS</h1>
+            <h1 className=" p-3 text-center  ">{flight2}</h1>
           </div>
         </div>
 

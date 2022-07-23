@@ -158,17 +158,17 @@ export default function FormDeparture() {
       childrens = "0";
     }
 
-    console.log(`Origin: ${origin}`);
-    // console.log(`ReturnDate: ${returnDate}`);
-    console.log(`Destination: ${destination}`);
+    console.log(`Origin: ${origin.slice(-3)}`);
+
+    console.log(`Destination: ${destination.slice(-3)}`);
     console.log(`DepartureDate: ${departureDate}`);
     console.log(`ReturnDate: ${returnDate}`);
     console.log(`Adults: ${adults}`);
     console.log(`Children: ${childrens}`);
 
     getFlightFull(
-      origin,
-      destination,
+      origin.slice(-3),
+      destination.slice(-3),
       departureDate,
       returnDate,
       adults,
@@ -254,7 +254,7 @@ export default function FormDeparture() {
 
                 <div className="card-content">
                   <Formik onSubmit={HandleSubmit}>
-                    {({ values, handleChange, handleSubmit, handleBlur }) => (
+                    {({ values }) => (
                       <Form onSubmit={HandleSubmit} className="formulario">
                         <div className="container">
                           <div className="row">
@@ -264,15 +264,17 @@ export default function FormDeparture() {
                                 sx={{ width: 300 }}
                                 options={codeIsoAirport}
                                 autoHighlight
+                                getOptionLabel={(option) =>
+                                  option.label + " " + option.code + ""
+                                }
                                 onChange={(ev) => setOrigin(ev.target.value)}
-                                getOptionLabel={(option) => option.code}
                                 renderOption={(props, option) => (
                                   <Box
                                     component="li"
                                     sx={{ "& > img": { mr: 2, flexShrink: 0 } }}
                                     {...props}
                                   >
-                                    {option.label}
+                                    {option.label}({option.code})
                                   </Box>
                                 )}
                                 renderInput={(params) => (
@@ -299,7 +301,9 @@ export default function FormDeparture() {
                                 onChange={(ev) => {
                                   setDestination(ev.target.value);
                                 }}
-                                getOptionLabel={(option) => option.code}
+                                getOptionLabel={(option) =>
+                                  option.label + " " + option.code + ""
+                                }
                                 renderOption={(props, option) => (
                                   <Box component="li" {...props}>
                                     {option.label} ({option.code})

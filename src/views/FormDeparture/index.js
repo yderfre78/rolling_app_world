@@ -12,7 +12,7 @@ import { Form, Formik } from "formik";
 import { useSpring, animated } from "react-spring";
 import "../InitParalal/paralal.css";
 
-import codeIsoAirport from "../../utils/data"
+import codeIsoAirport from "../../utils/data";
 
 import moment from "moment";
 
@@ -128,26 +128,22 @@ export default function FormDeparture() {
       childrens = "0";
     }
 
-    console.log(`Origin: ${origin}`);
-    // console.log(`ReturnDate: ${returnDate}`);
-    console.log(`Destination: ${destination}`);
+    console.log(`Origin: ${origin.slice(-3)}`);
+
+    console.log(`Destination: ${destination.slice(-3)}`);
     console.log(`DepartureDate: ${departureDate}`);
     console.log(`Adults: ${adults}`);
     console.log(`Children: ${childrens}`);
 
     getFlighTOnlydeparture(
-      origin,
-      destination,
+      origin.slice(-3),
+      destination.slice(-3),
       departureDate,
       adults,
       childrens
     ).catch(null);
     navigate("/list/departure");
   };
-
-  // const [title, setTitle] = useState("");
-  // const [leyend, setLeyend] = useState("");
-  // const [errorTitle, setErrorTitle] = useState("");
 
   return (
     <>
@@ -222,14 +218,16 @@ export default function FormDeparture() {
                                 options={codeIsoAirport}
                                 autoHighlight
                                 onChange={(ev) => setOrigin(ev.target.value)}
-                                getOptionLabel={(option) => option.code}
+                                getOptionLabel={(option) =>
+                                  option.label + " " + option.code + ""
+                                }
                                 renderOption={(props, option) => (
                                   <Box
                                     component="li"
                                     sx={{ "& > img": { mr: 2, flexShrink: 0 } }}
                                     {...props}
                                   >
-                                    {option.label}
+                                    {option.label}({option.code})
                                   </Box>
                                 )}
                                 renderInput={(params) => (
@@ -249,8 +247,6 @@ export default function FormDeparture() {
 
                             <div className="col">
                               <Autocomplete
-                                // error={failure}
-                                // helperText={failureMessage}
                                 id="destination"
                                 sx={{ width: 300 }}
                                 options={codeIsoAirport}
@@ -258,7 +254,9 @@ export default function FormDeparture() {
                                 onChange={(ev) => {
                                   setDestination(ev.target.value);
                                 }}
-                                getOptionLabel={(option) => option.code}
+                                getOptionLabel={(option) =>
+                                  option.label + " " + option.code + ""
+                                }
                                 renderOption={(props, option) => (
                                   <Box component="li" {...props}>
                                     {option.label} ({option.code})

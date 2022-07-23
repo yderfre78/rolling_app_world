@@ -19,7 +19,7 @@ export default async function apiCall({
   } catch (error) {
     console.log(error.response.status);
     if (error.response.status === 400) {
-      // window.location.replace("/");
+      window.location.replace("/");
     }
 
     if (error.response.status === 401) {
