@@ -41,17 +41,17 @@ export default function FlightListItemDetail({ duration, segments }) {
                       </h5>
                       <div className="row">
                         <div className="col">
-                          <h2 className="   ">{segment.arrival.iataCode}</h2>
+                          <h2 className="   ">{segment.departure.iataCode}</h2>
                           <h5 className="   ">{departure}</h5>
-                          <h5>Terminal: {segment.arrival.terminal}</h5>
+                          <h5>Terminal: {segment.departure.terminal}</h5>
                         </div>
                         <div className="col text-center  primary ">
                           <FaPlane className="h1 text-primary plane-icon" />
                         </div>
                         <div className="col">
-                          <h2 className="  ">{segment.departure.iataCode}</h2>
+                          <h2 className="  ">{segment.arrival.iataCode}</h2>
                           <h5 className="   ">{arrival}</h5>
-                          <h5>Terminal: {segment.departure.terminal}</h5>
+                          <h5>Terminal: {segment.arrival.terminal}</h5>
                         </div>
                       </div>
                     </div>
@@ -61,7 +61,7 @@ export default function FlightListItemDetail({ duration, segments }) {
                         {segment.aircraft.code}
                       </h2>
                       <h3 className=" mb-3 mr-2 text-center">
-                      {hours}Hrs {minutes}Mins
+                        {hours}Hrs {minutes}Mins
                       </h3>
                     </div>
                   </div>
