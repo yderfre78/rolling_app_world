@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 
-export default function FlightListDetail({ flight }, {flight2 }) {
+export default function FlightListDetail({ fligth2, flight }) {
   const navigate = useNavigate();
-  console.log(`Desde Fligth list item detail: ${flight}  ${flight2}`);
+  console.log(`Desde Fligth list item detail: ${flight}  ${fligth2.base}`);
   return (
     <>
       <div className="text-align-left ">
@@ -24,20 +24,22 @@ export default function FlightListDetail({ flight }, {flight2 }) {
       <div className="container-details">
         <div className="row ">
           <div className="mt-5 mb-5 card-item-deta ">
+            <h1 className=" p-3 text-center  ">
+              Precio: {fligth2.currency} ${fligth2.base}
+            </h1>
             <h1 className=" p-3 text-center  ">ITINERARIOS</h1>
-            <h1 className=" p-3 text-center  ">{flight2}</h1>
           </div>
         </div>
 
         <div>
-          <div className="container ">
+          <div className="container mt-4 mb-3 ">
             <div className="row">
               <div className="col-md-6 ">
-                <h1 className="text-primary marigin-sali">Salida</h1>
+                <h1 className="text-light marigin-sali">Salida</h1>
               </div>
               <div className="col-md-6">
                 <div className="">
-                  <FaArrowRight className="h1 text-primary text-center fa-left  " />
+                  <FaArrowRight className="h1 text-light text-center fa-left  " />
                 </div>
               </div>
             </div>
@@ -48,15 +50,15 @@ export default function FlightListDetail({ flight }, {flight2 }) {
             ))}
           </div>
         </div>
-        <div className="container ">
+        <div className="container mt-4 ">
           <div className="row">
             <div className="col-md-6">
               <div className="">
-                <FaArrowLeft className="h1  text-primary text-center fa-left" />
+                <FaArrowLeft className="h1  text-light text-center fa-left" />
               </div>
             </div>
             <div className="col-md-6 ">
-              <h1 className="text-primary marigin-ret ">Retorno</h1>
+              <h1 className="text-light marigin-ret ">Retorno</h1>
             </div>
           </div>
         </div>

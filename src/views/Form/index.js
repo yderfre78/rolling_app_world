@@ -249,7 +249,7 @@ export default function FormDeparture() {
             <div className="card  card-init">
               <div className="card">
                 <h2 className="text-center pt-2">
-                  Busca Vuelos de Salida y Regreso
+                  Busca Vuelos de Ida y Regreso
                 </h2>
 
                 <div className="card-content">

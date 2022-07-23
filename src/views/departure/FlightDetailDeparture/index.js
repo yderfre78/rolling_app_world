@@ -16,10 +16,11 @@ export default function FlightListDetailDepartures() {
   }
   console.log(`Detalle : ${FlighTOnlydeparture[id - 1].itineraries}`);
   const flight = FlighTOnlydeparture[id - 1].itineraries;
+  const fligth2 =FlighTOnlydeparture[id - 1].price;
 
   return (
     <>
-      <FlightListDetailDeparture flight={flight} />
+      <FlightListDetailDeparture flight={flight} fligth2={fligth2} />
     </>
   );
 }

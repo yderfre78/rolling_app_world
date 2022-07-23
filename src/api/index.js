@@ -21,6 +21,10 @@ export default async function apiCall({
     if (error.response.status === 400) {
       window.location.replace("/");
     }
+    console.log(error.response.status);
+    if (error.response.status === 500) {
+      window.location.replace("/");
+    }
 
     if (error.response.status === 401) {
       getAcces();
