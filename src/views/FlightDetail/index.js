@@ -17,11 +17,16 @@ export default function FlightDetail2() {
     );
   }
   console.log(`Detalle : ${flightFull[id - 1].itineraries}`);
+  console.log(`Detalle : ${flightFull[id - 1].price.total}`);
   const flight = flightFull[id - 1].itineraries;
+  const fligth2 = flightFull[id - 1].price.total;
 
   return (
     <>
-      <FlightListDetail flight={flight} />
+      <div>
+        <div className="card">{fligth2}</div>
+        <FlightListDetail flight={flight}   />
+      </div>
     </>
   );
 }
