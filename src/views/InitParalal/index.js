@@ -21,108 +21,115 @@ export default function InitParalal() {
   }));
   return (
     <>
-    <div className="container-full-body">
-    <div
-      className="container"
-      onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
-    >
-      <animated.div
-        className="card8"
-        style={{ transform: props.xy.interpolate(trans8) }}
-      />
+      <div className="container-full-body">
+        <div
+          className="container"
+          onMouseMove={({ clientX: x, clientY: y }) => set({ xy: calc(x, y) })}
+        >
+          <animated.div
+            className="card8"
+            style={{ transform: props.xy.interpolate(trans8) }}
+          />
 
-      <animated.div
-        className="card7"
-        style={{ transform: props.xy.interpolate(trans7) }}
-      />
-      <animated.div
-        className="card6"
-        style={{ transform: props.xy.interpolate(trans6) }}
-      />
-      <animated.div
-        className="card5"
-        style={{ transform: props.xy.interpolate(trans5) }}
-      />
-      <animated.div
-        className="card4"
-        style={{ transform: props.xy.interpolate(trans4) }}
-      />
-      <animated.div
-        className="card3"
-        style={{ transform: props.xy.interpolate(trans3) }}
-      />
-      <animated.div
-        className="card2"
-        style={{ transform: props.xy.interpolate(trans2) }}
-      />
-      <animated.div
-        className="card1"
-        style={{ transform: props.xy.interpolate(trans1) }}
-      />
+          <animated.div
+            className="card7"
+            style={{ transform: props.xy.interpolate(trans7) }}
+          />
+          <animated.div
+            className="card6"
+            style={{ transform: props.xy.interpolate(trans6) }}
+          />
+          <animated.div
+            className="card5"
+            style={{ transform: props.xy.interpolate(trans5) }}
+          />
+          <animated.div
+            className="card4"
+            style={{ transform: props.xy.interpolate(trans4) }}
+          />
+          <animated.div
+            className="card3"
+            style={{ transform: props.xy.interpolate(trans3) }}
+          />
+          <animated.div
+            className="card2"
+            style={{ transform: props.xy.interpolate(trans2) }}
+          />
+          <animated.div
+            className="card1"
+            style={{ transform: props.xy.interpolate(trans1) }}
+          />
 
-      <div className="container container-cards ">
-        <div className="row">
-          <div className="col">
-            <div className="card  card-init">
-              <div className="card-image">
-                <img
-                  className=" w-100 h-25"
-                  src="https://yderfre.xyz/assets/paral-react/ida3-min.jpg"
-                />
-                <h2 className="text-center pt-2">Busca Vuelos de Ida</h2>
-                <div className="card-content">
-                  <p className="text-center">
-                    Vuelos de ida selecciona fecha y numero de pasajeros
-                  </p>
+          <div className="container container-cards ">
+            <div className="row">
+              <div className="col">
+                <div className="card  card-init">
+                  <div className="card-image">
+                    <img
+                      className=" w-100 h-25"
+                      src="https://yderfre.xyz/assets/paral-react/ida3-min.jpg"
+                      alt="ida"
+                    />
+                    <h2 className="text-center pt-2">Busca Vuelos de Ida</h2>
+                    <div className="card-content">
+                      <p className="text-center">
+                        Vuelos de ida selecciona fecha y numero de pasajeros
+                      </p>
+                    </div>
+                    <div className="card-action text-center pb-3">
+                      <Link
+                        className="btn btn-primary button-g-i px-5"
+                        to={`/search/departure`}
+                      >
+                        Buscar
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-                <div className="card-action text-center pb-3">
-                <Link className="btn btn-secondary px-5" to={`/search/departure`}>
-                    Buscar
-                  </Link>
-                </div>
-           
               </div>
-            </div>
-          </div>
-          {/* <div className="w-25"></div> */}
-          <div className="col">
-            <div className="card  card-init">
-              <h1 className="text-center pt-2">Rolling the world</h1>
-              <p className="text-center">
-                En un Solo Lugar Busca Increibles Ofertas de Vuelos
-              </p>
-              <p className="text-center">Destinos a todo el mundo</p>
-            </div>
-          </div>
-          {/* <div className="w-25"></div> */}
-          <div className="col mr-10">
-            <div className="card  card-init">
-              <div className="card-image">
-                <img
-                  className=" w-100 h-25"
-                  src="https://yderfre.xyz/assets/paral-react/ida-regreso3-min.jpg"
-                />
-                <h3 className="text-center pt-2">
-                  Busca Vuelos de Ida y regreso
-                </h3>
-                <div className="card-content">
+
+              <div className="col">
+                <div className="card  card-init">
+                  <h1 className="text-center pt-2">Rolling the world</h1>
                   <p className="text-center">
-                    Vuelos de ida-regreso: selecciona fecha y numero de
-                    pasajeros
+                    En un Solo Lugar Busca Increibles Ofertas de Vuelos
                   </p>
+                  <p className="text-center">Destinos a todo el mundo</p>
                 </div>
-                <div className="card-action text-center pb-3">
-                  <Link className="btn btn-secondary px-5" to={`/search/departure/return`}>
-                    Buscar
-                  </Link>
+              </div>
+
+              <div className="col mr-10">
+                <div className="card  card-init">
+                  <div className="card-image">
+                    <img
+                      className=" w-100 h-25"
+                      src="https://yderfre.xyz/assets/paral-react/ida-regreso3-min.jpg"
+                      alt="regreso"
+                    />
+                    <h3 className="text-center pt-2">
+                      Busca Vuelos de Ida y regreso
+                    </h3>
+                    <div className="card-content">
+                      <p className="text-center">
+                        Vuelos de ida-regreso: selecciona fecha y numero de
+                        pasajeros
+                      </p>
+                    </div>
+                    <div className="card-action text-center pb-3">
+                      <Link
+                        className="btn btn-primary button-g-i px-5"
+                        to={`/search/departure/return`}
+                      >
+                        Buscar
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    </div>
     </>
   );
 }
