@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/http//yderfre78.github.io/rolling_app_world/static/css/main.79b83cf1.css",
+    "main.js": "/http//yderfre78.github.io/rolling_app_world/static/js/main.f5e8389f.js",
+    "static/js/787.197594ee.chunk.js": "/http//yderfre78.github.io/rolling_app_world/static/js/787.197594ee.chunk.js",
+    "index.html": "/http//yderfre78.github.io/rolling_app_world/index.html",
+    "main.79b83cf1.css.map": "/http//yderfre78.github.io/rolling_app_world/static/css/main.79b83cf1.css.map",
+    "main.f5e8389f.js.map": "/http//yderfre78.github.io/rolling_app_world/static/js/main.f5e8389f.js.map",
+    "787.197594ee.chunk.js.map": "/http//yderfre78.github.io/rolling_app_world/static/js/787.197594ee.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.79b83cf1.css",
+    "static/js/main.f5e8389f.js"
+  ]
+}
