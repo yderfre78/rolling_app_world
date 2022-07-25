@@ -2,7 +2,7 @@
   "name": "rolling_app_world",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http//yderfre78.github.io/rolling_app_world/",
+  "homepage": "http://yderfre78.github.io/rolling_app_world/",
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
