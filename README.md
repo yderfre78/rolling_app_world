@@ -49,7 +49,7 @@ Por favor lee el [CONTRIBUTING.md](https://github.com/yderfre78/rolling_app_worl
 
 ## Autor ✒️
 
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
+_Fredy Rivera con la ayuda del equipo de Codigo Facilito_
 
 * **Fredy Rivera Patiño** - *Trabajo Inicial**Documentación* - [yderfre78](https://github.com/yderfre78/)
 
