@@ -18,7 +18,7 @@ _Para utilizarlos localmente solo descargar el proyecto y en la consola el coman
 
 ### Instalación 🔧
 
-_Tener instalado npm, React,  visualStudioCode _
+_Tener instalado npm, React,  visualStudioCode_
 
 
 _Para instalar React en la consola: npm i react -D_
