@@ -26,9 +26,10 @@ _Para instalar React en la consola: npm i react -D_
 
 
 
-## Despliegue 📦
+## Guia de funcionamiento en Pdf 📦
+[Funcionamiento](https://yderfre.xyz/assets/paral-react/Rolling-The-Wolrd.pdf) 
 
-_Agrega notas adicionales sobre como hacer deploy_
+
 
 ## Construido con 🛠️
 
@@ -50,7 +51,7 @@ Por favor lee el [CONTRIBUTING.md](https://github.com/yderfre78/rolling_app_worl
 
 _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
 
-* **Fredy Rivera Patiño** - *Trabajo Inicial**Documentación* - [villanuevand](https://github.com/yderfre78/)
+* **Fredy Rivera Patiño** - *Trabajo Inicial**Documentación* - [yderfre78](https://github.com/yderfre78/)
 
 
 ## Licencia 📄
@@ -59,7 +60,7 @@ Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md
 
 ## Expresiones de Gratitud 🎁
 
-* Gracias a todo el equipo de Código Facilito quienes nos guiaron a través de este proyecto 🤓.
+* Gracias a todo el equipo de Código Facilito  quienes nos guiaron a través de este proyecto  los compañeros de este Bootcamp de React.js🤓.
 
 
 
