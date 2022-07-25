@@ -24,6 +24,9 @@ _Tener instalado npm, React,  visualStudioCode _
 _Para instalar React en la consola: npm i react -D_
 
 
+## Despliegue en la pagina de Git hub ⚙️
+[Link la Aplicacion Subida a Git Hub Pages](https://yderfre78.github.io/rolling_app_world) 
+
 
 
 ## Guia de funcionamiento en Pdf 📦
