@@ -158,5 +158,13 @@ body {
   justify-content: center;
 }
 
-/* position: absolute;
-    align-items: end; */
+
+@media only screen and (max-width: 768px) {
+  .card1, .card2, .card3, .card4, .card5, .card6, .card7, .card8, .card9 {
+  display: none!important;
+  }
+.container-cards {
+  height: 250%;
+}
+
+}

@@ -88,7 +88,7 @@ export default function InitParalal() {
                 </div>
               </div>
 
-              <div className="col-md-4 col-sm-12">
+              <div className="col-md-4 col-sm-12 card-mid">
                 <div className="card  card-init">
                   <h1 className="text-center pt-2">Rolling the world</h1>
                   <p className="text-center">
