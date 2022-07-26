@@ -53,9 +53,7 @@ div [class^="col-"] {
   margin-bottom: 10px;
 }
 
-/* .card2:hover{
-  background-color: #c7d8e2;
-} */
+
 .card {
   transition: 0.5s;
   cursor: pointer;
@@ -81,7 +79,7 @@ div [class^="col-"] {
 }
 
 .card:hover {
-  transform: scale(1.05);
+
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -125,18 +123,6 @@ div [class^="col-"] {
   justify-content: center;
 }
 
-/* .btn-detail {
-  background-color: #d9dfeb;
-}
-
-.btn-detail:hover {
-  background-color: #e9eef7;
-}
-
-.btn-text-l {
-  text-decoration: none;
-  color: black;
-} */
 
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
@@ -294,22 +280,6 @@ body {
 }
 
 
-/* .loader {
-  width: 64px;
-  height: 180px;
-  display: block;
-  margin: 10rem auto;
-  position: relative;
-  border-radius: 50% 50% 0 0;
-  border-bottom: 10px solid #00ccff;
-  background-color: #FFF;
-  background-image: radial-gradient(ellipse at center, #FFF 34%, #00ccff 35%, #00ccff 54%, #FFF 55%), linear-gradient(#006eff 10px, transparent 0);
-  background-size: 28px 28px;
-  background-position: center 20px , center 2px;
-  background-repeat: no-repeat;
-  box-sizing: border-box;
-  animation: animloaderBack 1s linear infinite alternate;
-} */
 
 .fa-right,
 .fa-left {
@@ -380,7 +350,9 @@ body {
 
 .align-arrow-right {
   text-align: right;
+  margin-right: 2rem;
 }
+
 
 .container-details {
   margin-top: 3rem;

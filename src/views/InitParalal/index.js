@@ -62,7 +62,7 @@ export default function InitParalal() {
 
           <div className="container container-cards ">
             <div className="row">
-              <div className="col">
+              <div className="col-md-4 col-sm-12 ">
                 <div className="card  card-init">
                   <div className="card-image">
                     <img
@@ -88,7 +88,7 @@ export default function InitParalal() {
                 </div>
               </div>
 
-              <div className="col">
+              <div className="col-md-4 col-sm-12">
                 <div className="card  card-init">
                   <h1 className="text-center pt-2">Rolling the world</h1>
                   <p className="text-center">
@@ -98,7 +98,7 @@ export default function InitParalal() {
                 </div>
               </div>
 
-              <div className="col mr-10">
+              <div className="col-md-4 col-sm-12 mr-10">
                 <div className="card  card-init">
                   <div className="card-image">
                     <img

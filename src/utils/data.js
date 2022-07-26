@@ -1,10 +1,5 @@
 const codeIsoAirport = [
   {
-    code: "GRU",
-    label: "Estado de São Paulo, Brasil, Aeropuerto Internacional de Guarulhos",
-  },
-
-  {
     code: "BOG",
     label:
       "Aeropuerto Internacional El Dorado, Bogotá, Distrito Capital, Colombia",

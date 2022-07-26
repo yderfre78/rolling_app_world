@@ -99,8 +99,8 @@ body {
 }
 
 .card6 {
-  min-width: 150ch;
-  min-height: 150ch;
+  min-width: 100ch;
+  min-height: 100ch;
   width: 100vw;
   height: 100vw;
   max-width: 100ch;
@@ -121,7 +121,7 @@ body {
 }
 
 .card8 {
-  min-width: 150ch;
+  min-width: 100ch;
   min-height: 50ch;
   width: 45vw;
   height: 45vw;

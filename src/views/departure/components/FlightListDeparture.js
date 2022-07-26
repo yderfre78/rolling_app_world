@@ -29,7 +29,7 @@ export default function FlightListDeparture({ FlighTOnlydeparture }) {
             aria-label="delete"
             size="large"
           >
-            <h4 className="m-3">Volver</h4>
+            <h4 className="">Volver</h4>
             <FaArrowAltCircleRight fontSize="inherit" />
           </IconButton>
         </div>
