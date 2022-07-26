@@ -1,0 +1,174 @@
+html,
+body,
+#root {
+  /* width: 100%;
+  height: 100%; */
+  margin: 0;
+  padding: 0;
+
+  background-image: url(https://yderfre.xyz/assets/paral-react/fondo-min.png);
+
+
+}
+
+.container-full-body {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+ 
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu,
+    roboto, noto, segoe ui, arial, sans-serif;
+  background: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+
+#root {
+  overflow: hidden;
+  /* background-image: url(https://yderfre.xyz/assets/paral-react/fondo-min.png); */
+}
+
+
+.card1,
+.card2,
+.card3,
+.card4 {
+  position: absolute;
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  will-change: transform;
+}
+
+.card1 {
+  min-width: 60ch;
+  min-height: 60ch;
+  width: 45vw;
+  height: 45vw;
+  max-width: 100ch;
+  max-height: 100ch;
+  background-image: url(https://yderfre.xyz/assets/paral-react/layer1-min.png);
+}
+
+.card2 {
+  min-width: 60ch;
+  min-height: 60ch;
+  width: 25vw;
+  height: 25vw;
+  max-width: 100ch;
+  max-height: 100ch;
+  background-image: url(https://yderfre.xyz/assets/paral-react/layer2-min.png);
+}
+
+.card3 {
+  min-width: 200ch;
+  min-height: 200ch;
+  width: 20vw;
+  height: 20vw;
+  max-width: 100ch;
+  max-height: 100ch;
+  background-image: url(https://yderfre.xyz/assets/paral-react/layer3-min.png);
+}
+
+.card4 {
+  min-width: 75ch;
+  min-height: 75ch;
+  width: 25vw;
+  height: 25vw;
+  max-width: 100ch;
+  max-height: 100ch;
+  background-image: url(https://yderfre.xyz/assets/paral-react/layer4-min.png);
+}
+
+.card5 {
+  width: 25ch;
+  height: 25ch;
+  background-image: url(https://yderfre.xyz/assets/paral-react/layer5-min.png);
+}
+
+.card6 {
+  min-width: 100ch;
+  min-height: 100ch;
+  width: 100vw;
+  height: 100vw;
+  max-width: 100ch;
+  max-height: 100ch;
+  position: absolute;
+  background-image: url(https://yderfre.xyz/assets/paral-react/layer6-min.png);
+}
+
+.card7 {
+  min-width: 150ch;
+  min-height: 150ch;
+  width: 100vw;
+  height: 100vw;
+  max-width: 100ch;
+  max-height: 100ch;
+  position: absolute;
+  background-image: url(https://yderfre.xyz/assets/paral-react/layer10-min.png);
+}
+
+.card8 {
+  min-width: 100ch;
+  min-height: 50ch;
+  width: 45vw;
+  height: 45vw;
+  max-width: 100ch;
+  max-height: 100ch;
+
+  background-image: url(https://yderfre.xyz/assets/paral-react/layer11-min.png);
+}
+
+.card9 {
+  width: 25ch;
+  height: 25ch;
+  background-image: url(https://yderfre.xyz/assets/paral-react/layer4-min.png);
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-init-info {
+  position: absolute;
+}
+
+.container-cards {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .card1, .card2, .card3, .card4, .card5, .card6, .card7, .card8, .card9 {
+  display: none!important;
+  }
+.container-cards {
+  height: 250%;
+}
+.container-cards-f{
+  height: 250%;
+}
+
+
+}

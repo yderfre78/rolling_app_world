@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# Rolling The World
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+_El objetivo de la aplicación es buscar las mejores 
+ofertas en los viajes por avión nacionales e 
+internacionales_
 
-## Available Scripts
+## Comenzando 🚀
 
-In the project directory, you can run:
+_Para utilizarlos localmente solo descargar el proyecto y en la consola el comando npm i_
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+### Pre-requisitos tener instalado React": "^18.2.0" 📋
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Instalación 🔧
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+_Tener instalado npm, React,  visualStudioCode_
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+_Para instalar React en la consola: npm i react -D_
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Despliegue en la pagina de Git hub ⚙️
+[Link la Aplicacion Subida a Git Hub Pages](https://yderfre78.github.io/rolling_app_world) 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Guia de funcionamiento en Pdf 📦
+[Funcionamiento](https://yderfre.xyz/assets/paral-react/Rolling-The-Wolrd.pdf) 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Construido con 🛠️
 
-### Analyzing the Bundle Size
+_React": "^18.2.0", npm VisualStudioCode_
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* [React](https://es.reactjs.org/) - Uno de los framework web más popular para crear aplicaciones web.
+* [npm](https://www.npmjs.com/) - Una herramienta de desarrollo de software que permite la gestión de paquetes y dependencias.
+* [Visual Studio Code](https://code.visualstudio.com/) - Un editor de código de texto que se utiliza para desarrollar aplicaciones web.
 
-### Making a Progressive Web App
+## Contribuyendo 🖇️
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Por favor lee el [CONTRIBUTING.md](https://github.com/yderfre78/rolling_app_world) para detalles de nuestro código de conducta
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+## Autor ✒️
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+_Fredy Rivera con la ayuda del equipo de Codigo Facilito_
+
+* **Fredy Rivera Patiño** - *Trabajo Inicial**Documentación* - [yderfre78](https://github.com/yderfre78/)
+
+
+## Licencia 📄
+
+Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
+
+## Expresiones de Gratitud 🎁
+
+* Gracias a todo el equipo de Código Facilito  quienes nos guiaron a través de este proyecto  los compañeros de este Bootcamp de React.js🤓.
+
+
+
+---
+⌨️  por [yderfre78](https://github.com/yderfre78/) 😊
