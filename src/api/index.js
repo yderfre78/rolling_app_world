@@ -62,7 +62,7 @@ const getAcces = () => {
     .then((result) => {
       saveTokenInLocalStorage(result.access_token);
       setTimeout(() => {
-        window.location.replace("/");
+        window.location.replace("/rolling_app_world/");
       }, 1000);
     })
     .catch((error) => console.log("error", error));
