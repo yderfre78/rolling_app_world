@@ -388,4 +388,10 @@ body {
   .card-mid{
     display: none;
   }
+  .formulario{
+    min-width: 50px!important;
+  }
+  .formulario button[type="submit"]{
+    width: 56%;
+  }
 }

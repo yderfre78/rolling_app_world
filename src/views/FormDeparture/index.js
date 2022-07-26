@@ -213,7 +213,7 @@ export default function FormDeparture() {
             style={{ transform: propss.xy.interpolate(trans1) }}
           />
 
-          <div className="container container-cards ">
+          <div className="container container-cards-f ">
             <div className="card  card-init">
               <div className="card">
                 <h2 className="text-center pt-2">Busca Vuelos de Ida</h2>
@@ -223,7 +223,7 @@ export default function FormDeparture() {
                       <Form onSubmit={HandleSubmit} className="formulario">
                         <div className="container">
                           <div className="row">
-                            <div className="col">
+                            <div className="col-md-4 col-sm-12">
                               <Autocomplete
                                 id="origin"
                                 sx={{ width: 300 }}
@@ -257,7 +257,7 @@ export default function FormDeparture() {
                               />
                             </div>
 
-                            <div className="col">
+                            <div className="col-md-4 col-sm-12">
                               <Autocomplete
                                 id="destination"
                                 sx={{ width: 300 }}
@@ -290,7 +290,7 @@ export default function FormDeparture() {
                               />
                             </div>
 
-                            <div className="col">
+                            <div className="col-md-4 col-sm-12">
                               <TextField
                                 helperText={failureMessageDepartureDate}
                                 error={failureDepartureDate}
@@ -316,7 +316,7 @@ export default function FormDeparture() {
                         </div>
                         <div className="container">
                           <div className="row">
-                            <div className="col-6">
+                            <div className="col-md-6 col-sm-12">
                               <Autocomplete
                                 id="adults"
                                 sx={{ width: 300 }}
@@ -343,7 +343,7 @@ export default function FormDeparture() {
                                 )}
                               />
                             </div>
-                            <div className="col-6">
+                            <div className="col-md-6 col-sm-12">
                               <Autocomplete
                                 id="childrens"
                                 sx={{ width: 300 }}
